@@ -1,25 +1,66 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavBar from './components/navbar/Navbar';
+import HomePage from './pages/HomePage';
 
-function App() {
+const App = () => {
+  const productosDB = [
+    {
+      id: '1',
+      name: 'Correa 1',
+      description: 'LoremIpsumCorrea1',
+      price: '10',
+      stock: '10',
+    },
+    {
+      id: '1',
+      name: 'Correa 1',
+      description: 'LoremIpsumCorrea1',
+      price: '10',
+      stock: '10',
+    },
+    {
+      id: '1',
+      name: 'Correa 1',
+      description: 'LoremIpsumCorrea1',
+      price: '10',
+      stock: '10',
+    },
+    {
+      id: '1',
+      name: 'Correa 1',
+      description: 'LoremIpsumCorrea1',
+      price: '10',
+      stock: '10',
+    },
+    {
+      id: '1',
+      name: 'Correa 1',
+      description: 'LoremIpsumCorrea1',
+      price: '10',
+      stock: '10',
+    },
+    {
+      id: '1',
+      name: 'Correa 1',
+      description: 'LoremIpsumCorrea1',
+      price: '10',
+      stock: '10',
+    },
+  ];
+  const [productos, setProductos] = useState([]);
+  useEffect(() => {
+    setProductos(productosDB);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route exact path='/' element={<HomePage productos={productos} />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
