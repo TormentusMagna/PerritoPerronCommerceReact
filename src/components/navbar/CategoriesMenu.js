@@ -6,6 +6,9 @@ const CategoriesMenuWrapper = styled.ul`
   justify-content: space-evenly;
   list-style: none;
   width: 65%;
+  a {
+    text-decoration: none;
+  }
   li {
     border-left: 2px solid #fff;
     border-right: 2px solid #fff;
@@ -14,6 +17,7 @@ const CategoriesMenuWrapper = styled.ul`
     font-weight: bold;
     padding: 0 10px;
     text-transform: uppercase;
+
     &:hover {
       cursor: pointer;
     }
@@ -23,47 +27,17 @@ const CategoriesMenuWrapper = styled.ul`
 const CategoriesMenu = () => {
   return (
     <CategoriesMenuWrapper>
-      <Link>
-        <li to='/category/:name'>Correas</li>
+      <Link to='/category/correas'>
+        <li>Correas</li>
       </Link>
 
-      <Link>
-        <li to='/category/:name'>Ropa</li>
+      <Link to='/category/ropa'>
+        <li>Ropa</li>
       </Link>
 
-      <Link>
-        <li to='/category/:name'>Juguetes</li>
+      <Link to='/category/juguetes'>
+        <li>Juguetes</li>
       </Link>
-      {/* <li
-        onClick={() => {
-          window.location.href = 'https://www.youtube.com';
-        }}>
-        Correas
-      </li>
-      <li
-        onClick={() => {
-          window.location.href = 'https://www.youtube.com';
-        }}>
-        Ropa
-      </li>
-      <li
-        onClick={() => {
-          window.location.href = 'https://www.youtube.com';
-        }}>
-        Transportadoras
-      </li>
-      <li
-        onClick={() => {
-          window.location.href = 'https://www.youtube.com';
-        }}>
-        Juguetes
-      </li>
-      <li
-        onClick={() => {
-          window.location.href = 'https://www.youtube.com';
-        }}>
-        Camas
-      </li> */}
     </CategoriesMenuWrapper>
   );
 };
