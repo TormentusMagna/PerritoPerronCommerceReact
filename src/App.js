@@ -71,7 +71,7 @@ const App = () => {
   const [productos, setProductos] = useState([]);
   useEffect(() => {
     setProductos(productosDB);
-  }, []);
+  }, [productosDB]);
 
   return (
     <BrowserRouter>
@@ -83,7 +83,11 @@ const App = () => {
           path='/category/:name'
           element={<Categories productos={productos} />}
         />
-        <Route exact path='/product/:name' element={<ProductDetails />} />
+        <Route
+          exact
+          path='/product/:name'
+          element={<ProductDetails productos={productos} />}
+        />
       </Routes>
     </BrowserRouter>
   );

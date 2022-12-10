@@ -1,5 +1,9 @@
-const ProductDetails = () => {
-  return <h1>SOY EL PRODUCTO SOLO SELECCUIONADO</h1>;
+import { useParams } from 'react-router-dom';
+import DetailsListContainer from '../components/details/DetailsListContainer';
+
+const ProductDetails = ({ productos }) => {
+  const { name } = useParams();
+  return <DetailsListContainer productos={productos} productName={name} />;
 };
 
 export default ProductDetails;
